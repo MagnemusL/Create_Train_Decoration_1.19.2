@@ -28,20 +28,17 @@ public class StationSignBlock extends HorizontalDirectionalBlock {
     public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         Direction facing = blockState.getValue(FACING);
         // Adjust the VoxelShape based on the facing direction
-        switch (facing) {
-            case NORTH:
-                return Block.box(-3, 0, 4, 19, 16, 12);
-            case EAST:
-                return Block.box(4, 0, -3, 12, 16, 19);
-            case SOUTH:
-                return Block.box(-3, 0, 4, 19, 16, 12);
-            case WEST:
-                return Block.box(4, 0, -3, 12, 16, 19);
-            default:
-                return SHAPE;
+        if (facing == Direction.NORTH) {
+            return Block.box(-3, 0, 3, 19, 16, 12);  // Same shape for north direction
+        } else if (facing == Direction.EAST) {
+            return Block.box(4, 0, -3, 13, 16, 19);   // Same shape for east direction
+        } else if (facing == Direction.SOUTH) {
+            return Block.box(-3, 0, 4, 19, 16, 13);  // Same shape for south direction
+        } else if (facing == Direction.WEST) {
+            return Block.box(3, 0, -3, 12, 16, 19);   // Same shape for west direction
         }
+        return SHAPE;
     }
-
 
 
     @Override
