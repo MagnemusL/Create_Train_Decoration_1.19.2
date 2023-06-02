@@ -3,6 +3,7 @@ package net.magne.traindeco.block.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.Mirror;
@@ -10,32 +11,21 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class StationSignBlock extends HorizontalDirectionalBlock {
-    private static final VoxelShape SHAPE = Block.box(-3, 0, 4, 19, 16, 12);
+public class TrashcanBlockOne extends HorizontalDirectionalBlock {
+    private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16, 16);
 
-    public StationSignBlock(Properties properties) {
-        super(Block.Properties.of(Material.METAL));
+    public TrashcanBlockOne(Properties properties) {
+        super(Properties.of(Material.METAL));
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
-
     @Override
-    public VoxelShape getShape(BlockState state, net.minecraft.world.level.BlockGetter world, BlockPos pos, CollisionContext context) {
-        Direction facing = state.getValue(FACING);
-        if (facing == Direction.NORTH) {
-            return Block.box(-3, 0, 3, 19, 16, 12);
-        } else if (facing == Direction.EAST) {
-            return Block.box(4, 0, -3, 13, 16, 19);
-        } else if (facing == Direction.SOUTH) {
-            return Block.box(-3, 0, 4, 19, 16, 13);
-        } else if (facing == Direction.WEST) {
-            return Block.box(3, 0, -3, 12, 16, 19);
-        }
-        return SHAPE;
+    public boolean isOcclusionShapeFullBlock(BlockState p_222959_, BlockGetter p_222960_, BlockPos p_222961_) {
+        return false;
     }
+
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

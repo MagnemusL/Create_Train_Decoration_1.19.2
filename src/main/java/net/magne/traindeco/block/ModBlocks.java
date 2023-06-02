@@ -1,7 +1,9 @@
 package net.magne.traindeco.block;
 
 import net.magne.traindeco.TrainDeco;
+import net.magne.traindeco.block.custom.DoubleStationSignBlock;
 import net.magne.traindeco.block.custom.StationSignBlock;
+import net.magne.traindeco.block.custom.TrashcanBlockOne;
 import net.magne.traindeco.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -24,6 +26,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> STATION_SIGN = registerBlock("station_sign",
             () -> new StationSignBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(6f).requiresCorrectToolForDrops().noOcclusion()), CreativeModeTab.TAB_MISC);
+
+
+    public static final RegistryObject<Block> DOUBLE_STATION_SIGN = registerBlock("double_station_sign",
+            () -> new DoubleStationSignBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(6f).requiresCorrectToolForDrops().noOcclusion()), CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> TRASHCAN_ONE = registerBlock("trashcan_one",
+            () -> new TrashcanBlockOne(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(6f).requiresCorrectToolForDrops().noOcclusion()), CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> REINFORCED_CONCRETE = registerBlock("reinforced_concrete",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .explosionResistance(3f).strength(6f).requiresCorrectToolForDrops().noOcclusion()), CreativeModeTab.TAB_MISC);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

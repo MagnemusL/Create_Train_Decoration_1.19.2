@@ -13,10 +13,10 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class StationSignBlock extends HorizontalDirectionalBlock {
+public class DoubleStationSignBlock extends HorizontalDirectionalBlock {
     private static final VoxelShape SHAPE = Block.box(-3, 0, 4, 19, 16, 12);
 
-    public StationSignBlock(Properties properties) {
+    public DoubleStationSignBlock(Properties properties) {
         super(Block.Properties.of(Material.METAL));
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
@@ -26,13 +26,13 @@ public class StationSignBlock extends HorizontalDirectionalBlock {
     public VoxelShape getShape(BlockState state, net.minecraft.world.level.BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction facing = state.getValue(FACING);
         if (facing == Direction.NORTH) {
-            return Block.box(-3, 0, 3, 19, 16, 12);
+            return Block.box(-3, 0, 3, 19, 16, 13);
         } else if (facing == Direction.EAST) {
-            return Block.box(4, 0, -3, 13, 16, 19);
+            return Block.box(3, 0, -3, 13, 16, 19);
         } else if (facing == Direction.SOUTH) {
-            return Block.box(-3, 0, 4, 19, 16, 13);
+            return Block.box(-3, 0, 3, 19, 16, 13);
         } else if (facing == Direction.WEST) {
-            return Block.box(3, 0, -3, 12, 16, 19);
+            return Block.box(3, 0, -3, 13, 16, 19);
         }
         return SHAPE;
     }
