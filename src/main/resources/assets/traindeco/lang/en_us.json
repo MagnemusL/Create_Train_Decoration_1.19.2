@@ -2,5 +2,10 @@
   "block.traindeco.station_sign": "Station Sign",
   "block.traindeco.double_station_sign": "Double Station Sign",
   "block.traindeco.reinforced_concrete": "Reinforced Concrete",
-  "block.traindeco.trashcan_one": "Trashcan Variant 1"
+
+
+
+  "item.traindeco.hamburger": "Hamburger",
+  "item.traindeco.cola": "Coca Cola",
+  "item.traindeco.sign_item": "Sign Item"
 }
