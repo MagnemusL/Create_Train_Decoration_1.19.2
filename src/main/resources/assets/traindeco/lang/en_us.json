@@ -2,10 +2,14 @@
   "block.traindeco.station_sign": "Station Sign",
   "block.traindeco.double_station_sign": "Double Station Sign",
   "block.traindeco.reinforced_concrete": "Reinforced Concrete",
+  "block.traindeco.trashcan_one": "Trashcan Variant 1",
+  "block.traindeco.test": "Water Block Test",
+  "block.traindeco.water_block": "Lithium Block Test",
 
 
 
   "item.traindeco.hamburger": "Hamburger",
   "item.traindeco.cola": "Coca Cola",
-  "item.traindeco.sign_item": "Sign Item"
+  "item.traindeco.sign_item": "Sign Item",
+  "item.traindeco.water_item": "Lithium Item Test"
 }

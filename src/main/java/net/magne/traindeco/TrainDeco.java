@@ -23,6 +23,7 @@ public class TrainDeco
     public TrainDeco() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
