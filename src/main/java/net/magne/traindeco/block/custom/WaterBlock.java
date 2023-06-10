@@ -25,9 +25,9 @@ public class WaterBlock extends Block {
             ServerLevel serverWorld = level;
             Player player = serverWorld.getNearestPlayer(pos.getX(), pos.getY(), pos.getZ(), -1.0, false);
             if (player != null) {
-                lithiumReaction(pos, player, level);
+                SoundHelper.playSound(level, pos, SoundEvents.GENERIC_EXPLODE, 5.0f, 1.0f);
+                }
             }
-        }
     }
 
 
@@ -37,15 +37,6 @@ public class WaterBlock extends Block {
             return true;
         }
         return false;
-    }
-
-    @Override
-    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState blockState, boolean b) {
-        super.onPlace(state, level, pos, blockState, b);
-
-        if (areSurroundingBlocksWater(level, pos)) {
-            level.destroyBlock(pos, false);
-        }
     }
 
     public boolean areSurroundingBlocksWater(Level world, BlockPos pos) {
